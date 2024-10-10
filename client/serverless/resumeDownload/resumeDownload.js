@@ -1,30 +1,26 @@
-// Netlify Function
-// Serves a PDF File 
-const fs = require ('fs')
-const stringPath = './PDFs/ThomasDoyleResume.pdf'
-const filename = 'ThomasDoyleResume.pdf'
+import fs from "fs";
+const stringPath = "./PDFs/ThomasDoyleResume.pdf";
+const filename = "ThomasDoyleResume.pdf";
 
-exports.handler = async (event, context) => {
+export const handler = async () => {
   try {
-    var encodedFile = encodeURIComponent(filename)
-    var file = fs.readFileSync(require.resolve(stringPath), {encoding: 'base64'});
-    console.log("read....")
-  }
-  catch (e) {
-    console.log("not Rad....")
+    var encodedFile = encodeURIComponent(filename);
+    var file = fs.readFileSync(stringPath, { encoding: "base64" });
+    console.log("read....");
+  } catch (e) {
+    console.log("not Rad....");
     return {
-      statusCode:420,
+      statusCode: 420,
       body: `oh no ${e}`
-    }
+    };
   }
   return {
     statusCode: 200,
     headers: {
-      'Content-type' : 'application/pdf', 
-      'Content-disposition': `attachment; filename="${encodedFile}"`
+      "Content-type": "application/pdf",
+      "Content-disposition": `attachment; filename="${encodedFile}"`
     },
     body: `${file}`,
-    isBase64Encoded : true,
-    
-}
-}
+    isBase64Encoded: true
+  };
+};

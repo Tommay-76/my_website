@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
+import Chip from "@mui/material/Chip";
 
-import Chip from '@material-ui/core/Chip'
-
-function Child ({ name, remove }) {
-  return (
-    <Chip label={name} onDelete={() => remove(name)} color='secondary' />
-  )
+function Child({ name, remove }) {
+  return <Chip label={name} onDelete={() => remove(name)} color="secondary" />;
 }
 
-export default Child
+Child.propTypes = {
+  name: PropTypes.string.isRequired,
+  remove: PropTypes.func
+};
+
+export default Child;

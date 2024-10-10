@@ -1,16 +1,16 @@
-import React from 'react'
-import '../css/modal.css'
+import React from "react";
+import "../css/modal.css";
 
-function Modal ({ selectedImage, setSelectedImage }) {
+function Modal({ selectedImage, setSelectedImage }) {
   const handleClick = (e) => {
-    if (e.target.classList.contains('overlay')) {
-      setSelectedImage(null)
+    if (e.target.classList.contains("overlay")) {
+      setSelectedImage(null);
     }
-  }
+  };
   return (
-    <div className='overlay' onClick={handleClick}>
-      <img src={selectedImage} alt='selectedImage' />
+    <div className="overlay" onClick={handleClick}>
+      <img src={selectedImage} alt="selectedImage" />
     </div>
-  )
+  );
 }
-export default Modal
+export default Modal;

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 // import '../css/ResumeButton.css'
 // import axios from 'axios'
 // import  FileDownload  from 'js-file-download'
 
-function ResumeButton () {
+function ResumeButton() {
   // const viewHandler = async () => {
   //   axios(`/api/resume_view`, {
   //     method: "GET",
@@ -43,8 +43,7 @@ function ResumeButton () {
   //     });
   // };
   return (
-    <div className='ResumeButton'>
-      
+    <div className="ResumeButton">
       <h2>My Resume</h2>
 
       {/* <button onClick={viewHandler} className='ResumeViewButton' style={{ color: 'black' }}>
@@ -53,10 +52,10 @@ function ResumeButton () {
       <button onClick={downloadHandler} className='ResumeDownloadButton' style={{ color: 'black' }}>
         <h2> Download </h2>
       </button> */}
-      <a href='/api/resumeView'> View Resume!</a>
-      <a href='/api/resumeDownload'> Download Resume!</a>
+      <a href="/api/resumeView"> View Resume!</a>
+      <a href="/api/resumeDownload"> Download Resume!</a>
     </div>
-  )
+  );
 }
 
-export default ResumeButton
+export default ResumeButton;
