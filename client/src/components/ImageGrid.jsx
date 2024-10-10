@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/ImageGrid.css";
-import PropTypes from "prop-types";
 
 function ImageGrid({ setSelectedImage, images }) {
   const gridItems = images;
@@ -18,10 +17,5 @@ function ImageGrid({ setSelectedImage, images }) {
     </div>
   );
 }
-
-ImageGrid.propTypes = {
-  images: PropTypes.array(PropTypes.any),
-  setSelectedImage: PropTypes.func
-};
 
 export default ImageGrid;
