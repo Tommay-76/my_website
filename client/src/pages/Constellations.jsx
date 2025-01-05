@@ -1,23 +1,24 @@
-import { useEffect, React } from "react";
+import { useEffect, React, useRef } from "react";
 import "react-multi-carousel/lib/styles.css";
 import "../css/ProjectPage.css";
-
+import { startAnimation } from "../threeJS/constellations/renderer";
 import BackToTopButton from "../components/BackToTopButton";
 import ProjectsBlock from "../components/ProjectsBlock";
-
-// import Child from './components/element'
-// import Button from '@material-ui/core/Button'
-// import TextField from '@material-ui/core/TextField'
 
 function Constellations() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const ref = useRef();
+  useEffect(() => {
+    if (ref.current) startAnimation(500, 300);
+  }, ref);
   return (
     <div className="constellationsBody">
       <h1>Constellations</h1>
-      <div className="constellationsBanner" />
+      <div className="constellationsBanner">
+        <canvas className="constellationsBannerInner" id="bg" width="500" height="300" ref={ref}></canvas>
+      </div>
       <div className="contentBlock">
         <h3>Written in: Java</h3>
         <p>

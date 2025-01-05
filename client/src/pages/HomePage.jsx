@@ -2,13 +2,14 @@ import { React, useEffect } from "react";
 import "../css/HomePage.css";
 
 // Components
-import BackToTopButton from "../components/BackToTopButton";
 import ProjectsBlock from "../components/ProjectsBlock";
+import ContactBlock from "../components/ContactBlock";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ContentBlock from "../components/ContentBlock";
 
 const HomePage = () => {
   useEffect(() => {
@@ -17,166 +18,174 @@ const HomePage = () => {
 
   return (
     <div className="mainBody">
-      <div className="mainHeaderMain">
-        <div className="displayPic" />
-        <h1>Thomas Doyle</h1>
-        <hr className="hrTitle" />
-        <h3>Designer | Developer</h3>
+      <div className="bento">
+        <div>
+          <div className="detailsBox">
+            <div className="detailsBoxInner">
+              <div className="displayPic" />
+              <h1>Thomas Doyle</h1>
+              <hr className="displayHr" />
+              <h3>Software Developer | Coffee connoisseur </h3>
+              <hr className="displayHr" />
+              <p>
+                {" "}
+                I am a full-stack software engineer, skilled in delivering rapid feature development while fostering
+                effective teamwork. Holding dual bachelor&apos;s degrees in Computer Science and Media Arts, I excel in
+                bridging technical proficiency with creative problem-solving. My strong communication skills enhance
+                project delivery and ensure alignment with team objectives, driving successful outcomes in every
+                endeavor.
+              </p>
+              <p>I make a mean cocktail, I&apos;m a horrible chess player and I love a late night gaming session :)</p>
+            </div>
+          </div>
+          {/* <ContentBlock heading="About me" content={<></>} /> */}
+        </div>
+        <div>
+          <ContentBlock
+            color="purple"
+            heading={"Professional Experience"}
+            content={
+              <>
+                <h4>Company: Doshii</h4>
+                <Accordion style={{ boxShadow: "none", color: "black", backgroundColor: "transparent" }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "black" }} />}>
+                    <div>
+                      <h3>Software Engineer</h3>
+                      <i>October 2023 to present</i>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <p>
+                      Full-Stack Software engineer, delivering feature enhancements and platform maintenence to Doshii’s
+                      core service.
+                    </p>
+
+                    <ul>
+                      <li>
+                        Spearheading enhancements to the Menu Management project, introducing advanced features such as
+                        user session tracking, Single Sign-On (SSO), and comprehensive Venue Analytics, significantly
+                        enriching the user experience.
+                      </li>
+                      <li>
+                        Extended multiple Doshii integrations, empowering merchants to efficiently manage availability,
+                        operating hours, and dynamic, time-specific menus, leading to improved operational efficiency
+                        for merchants.
+                      </li>
+                      <li>
+                        Architected and socialized technical solutions across various Doshii products and features,
+                        influencing key technical decisions and product road maps to align with business objectives.
+                      </li>
+                    </ul>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ boxShadow: "none", color: "black", backgroundColor: "transparent" }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "black" }} />}>
+                    <div>
+                      <h3>Junior Software Engineer</h3>
+                      <i>January 2022 to October 2023</i>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <p>
+                      Full-Stack Software engineer, delivering feature enhancements and platform maintenence to Doshii’s
+                      core service.
+                    </p>
+
+                    <ul>
+                      <li>
+                        Developed the Menu Manager, a robust web application enabling Doshii merchants to seamlessly
+                        manage menus across multiple apps, enhancing their operational capabilities.
+                      </li>
+                      <li>
+                        Maintained 100% test coverage for customer-facing applications by implementing a rigorous unit,
+                        integration, and end-to-end testing strategy, ensuring high reliability and performance.
+                      </li>
+                      <li>
+                        Architected and socialized technical solutions across various Doshii products and features,
+                        influencing key technical decisions and product road maps to align with business objectives.
+                      </li>
+                      <li>
+                        Delivered timely ad hoc product patches to address emerging issues, showcasing adaptability and
+                        commitment to maintaining product integrity.
+                      </li>
+                    </ul>
+                  </AccordionDetails>
+                </Accordion>
+              </>
+            }
+          />
+          <div className="innerBento">
+            <ContentBlock
+              halfed
+              color="blue"
+              heading={"Language Proficiencies"}
+              content={
+                <>
+                  <ul>
+                    <li className="skillsLi">JavaScript (MERN)</li>
+                    <li className="skillsLi">Python</li>
+                    <li className="skillsLi">C</li>
+                    <li className="skillsLi">Java</li>
+                    <li className="skillsLi">Unix</li>
+                    <li className="skillsLi">Terraform / TerraGrunt</li>
+                    <li className="skillsLi">PostgresQL</li>
+                  </ul>
+                </>
+              }
+            />
+            <ContactBlock />
+          </div>
+        </div>
+        <div>
+          <ContentBlock
+            color="orange"
+            heading={"Education"}
+            content={
+              <>
+                <h4>University of New South Wales:</h4>
+                <i>Bachelor of Computer Science / Bachelor of Media Arts (Double Degree)</i>
+                <h4>2017- 2021</h4>
+                <p>
+                  During my time I | Computer Systems Fundamentals | Software Engineering Fundamentals | Data Structures
+                  and Algorithms | O-O Design & Programming | Extended Security Engineering | Computer Networks &
+                  Applications | Concepts of Programming Languages
+                </p>
+                <Accordion style={{ boxShadow: "none" }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <h3>Computer Science Subjects:</h3>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <p>
+                      Introduction to Programming | Computer Systems Fundamentals | Software Engineering Fundamentals |
+                      Data Structures and Algorithms | O-O Design & Programming | Extended Security Engineering |
+                      Computer Networks & Applications | Concepts of Programming Languages | Operating Systems |
+                      Algorithms & Programming Tech | Securing Fixed & Wireless Networks | Web Application Security |
+                      Security Assessment | Digital Forensics | Mathematics 1A | Mathematics 1B | Discrete Mathematics |
+                      Management and Ethics | Computer Science Project
+                    </p>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion style={{ boxShadow: "none" }}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <h3>Media Arts Subjects:</h3>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <p>
+                      Studio Gpteway 1 | Studio Gateway 2 | Creative Practices: Methods | Media Arts Gateway 1 | Media
+                      Arts Gateway 2 | Creative Practices: Contexts | Integrated Design Computing 2 | Drawing | Media
+                      Art in the 21st Century | The 3D Animated Body | CGI Lens Lab | Systems for Interactive Media |
+                      Visual Effects Project | Interactive Installation | Interactive Visualisation | Professional
+                      Practice
+                    </p>
+                  </AccordionDetails>
+                </Accordion>
+              </>
+            }
+          />
+        </div>
       </div>
-      <div className="contentBlock">
-        <h3>About me:</h3>
-        <p>
-          {" "}
-          I would like to think myself as a digital creative, whether that be coding up website designs, using 3d
-          modelling software to create interesting characters and environments, or 2D software such as Photoshop or
-          Illustrator, where I can communicate visually through effective graphics and visuals.
-        </p>
-        <p>I make a mean cocktail, I&apos;m a horrible chess player and I&apos;m great at shooting things online.</p>
-      </div>
-      <div className="contentBlock" id="education">
-        <h3>Education:</h3>
-        <h2>University of New South Wales:</h2>
-        <h3>Bachelor of Computer Science / Bachelor of Media Arts (Double Degree)</h3>
-        <h4>2017- 2021</h4>
-        <p>
-          I started out my tertiary education studying a Bachelor of Media Arts, a degree which focussed on how digital
-          media can be used to create art. Whilst this degree was rewarding, I felt that it was not technically focussed
-          enough, and so in 2018, I switched to a double degree in Computer Science. From my Media Arts degree I have
-          learnt a range of creative Skills such as:
-        </p>
-        <ul>
-          <li> Graphic Design</li>
-          <li>3D modelling and animation</li>
-          <li>Interactive Design </li>
-        </ul>
-        <p>
-          My Computer Science education has taught me a range of general programming skills and principles, such as
-          Object-Oriented Design, the SOLID principles and Agile Development methodologies, as well as fostered my
-          interest in specific disciplines. Cyber Security and Frontend Software design are particular areas of
-          interest. I&apos;m comfortable with Python and the linux environment, and I&apos;m familiar with version
-          control/management software such as Github and Jira.
-        </p>
-        <Accordion style={{ boxShadow: "none" }}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <h3>Computer Science Subjects:</h3>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>
-              Introduction to Programming | Computer Systems Fundamentals | Software Engineering Fundamentals | Data
-              Structures and Algorithms | O-O Design & Programming | Extended Security Engineering | Computer Networks &
-              Applications | Concepts of Programming Languages | Operating Systems | Algorithms & Programming Tech |
-              Securing Fixed & Wireless Networks | Web Application Security | Security Assessment | Digital Forensics |
-              Mathematics 1A | Mathematics 1B | Discrete Mathematics | Management and Ethics | Computer Science Project
-            </p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion style={{ boxShadow: "none" }}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <h3>Media Arts Subjects:</h3>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>
-              Studio Gpteway 1 | Studio Gateway 2 | Creative Practices: Methods | Media Arts Gateway 1 | Media Arts
-              Gateway 2 | Creative Practices: Contexts | Integrated Design Computing 2 | Drawing | Media Art in the 21st
-              Century | The 3D Animated Body | CGI Lens Lab | Systems for Interactive Media | Visual Effects Project |
-              Interactive Installation | Interactive Visualisation | Professional Practice
-            </p>
-          </AccordionDetails>
-        </Accordion>
-      </div>
-      <div className="contentBlock" id="projects">
-        <h3>Skills:</h3>
-        <div className="skillBox">
-          <div className="skillName">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h4> C: </h4>
-              <h4>90%</h4>
-            </div>
-          </div>
-          <div className="skillGraphic">
-            <div className="skillGraphicFill_C" />
-          </div>
-          <p>
-            The first language I learnt, and my favourite. I love the low level nature of it, the strongly typed
-            functions, the memory management. This language taught me the fundamentals of programming and as such, I am
-            familiar with it. Any Computer Science concept I learnt at university, was learnt in C, from arrays to
-            linked lists to operating systems kernel memory.{" "}
-          </p>
-        </div>
-        <div className="skillBox">
-          <div className="skillName">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h4> Python: </h4>
-              <h4>90%</h4>
-            </div>
-          </div>
-          <div className="skillGraphic">
-            <div className="skillGraphicFill_Python" />
-          </div>
-          <p>
-            Python is what I turn to for any mundane task I want to automate. It’s easy to use, has a library for any
-            use case, and is high level enough that I can leave it for months and never need a refresher on the syntax.
-            I have experience with it as a backend for uni websites, chat servers and clients, as well as parsers for
-            JSON, XML and HTML.{" "}
-          </p>
-        </div>
-        <div className="skillBox">
-          <div className="skillName">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h4> JavaScript: </h4>
-              <h4>60%</h4>
-            </div>
-          </div>
-          <div className="skillGraphic">
-            <div className="skillGraphicFill_JS" />
-          </div>
-          <p>
-            The newest addition to my language arsenal, JavaScript is the current language I’m actively learning as part
-            of my web-dev education, albeit in a self-learned sense rather than formally. Whilst I have experience using
-            frameworks and libraries such as React, Express, Node.js and Mongo.db to create well functioning websites, I
-            would say it’s my weakest language as I have little experience with the vanilla language. That being said,
-            who uses vanilla JavaScript these days.{" "}
-          </p>
-        </div>
-        <div className="skillBox">
-          <div className="skillName">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h4> Java: </h4>
-              <h4>80%</h4>
-            </div>
-          </div>
-          <div className="skillGraphic">
-            <div className="skillGraphicFill_Java" />
-          </div>
-          <p>
-            Java introduced me to Object-Oriented design and was the primary language I have used for creative
-            endeavours, such as my interactive Media Projects, like Asteroids. The language is fine, although I would
-            rather be coding in C#, as Oracle and the libraries associated with Java are a pain, nor do I trust its
-            automated garbage collection. Array Lists are cool, but there must be a better way to initialize them.{" "}
-          </p>
-        </div>
-        <div className="skillBox">
-          <div className="skillName">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h4> Unix: </h4>
-              <h4>80%</h4>
-            </div>
-          </div>
-          <div className="skillGraphic">
-            <div className="skillGraphicFill_Unix" />
-          </div>
-          <p>
-            I started using the Linux terminal at the start of my degree, and can safely say I have a strong grasp on
-            the many commands and concepts that make the terminal so powerful. I currently run WSL2 (Windows Subsystem
-            for Linux) on my home setup, and have spent a large portion of my degree using Kali. I have taken courses
-            that use command line in different and unique ways, such as digital forensics, low level networking, version
-            control and OS container management ( i.e. Docker). There are still so many tools I don&apos;t know I need
-            yet, but I&apos;m keen to continue to expand my skills.{" "}
-          </p>
-        </div>
-      </div>
+
       <ProjectsBlock />
-      <BackToTopButton />
     </div>
   );
 };

@@ -1,7 +1,3 @@
-
-*{
-    font-family: 'Courier New', Courier, monospace;
-}
 Link {
     cursor: pointer;
 }
@@ -29,6 +25,7 @@ button {
 }
 
 .constellationsBody {
+    padding-inline: 10%;
     align-items: center;
     min-height: 100em;
     display: flex;
@@ -39,6 +36,7 @@ button {
     color: rgb(255, 255, 255);
 }
 .filmFinderBody {
+    padding-inline: 10%;
     align-items: center;
     min-height: 100em;
     display: flex;
@@ -49,6 +47,7 @@ button {
     color: rgb(255, 255, 255);
 }
 .comeFlyWithMeBody {
+    padding-inline: 10%;
     align-items: center;
     min-height: 100em;
     display: flex;
@@ -59,6 +58,7 @@ button {
     color: rgb(255, 255, 255);
 }
 .fallingBody {
+    padding-inline: 10%;
     align-items: center;
     min-height: 100em;
     display: flex;
@@ -69,6 +69,7 @@ button {
     color: rgb(255, 255, 255);
 }
 .sickDayBody {
+    padding-inline: 10%;
     align-items: center;
     min-height: 100em;
     display: flex;
@@ -78,14 +79,21 @@ button {
     padding: 2em;
     color: rgb(255, 255, 255);
 }
+
 .constellationsBanner {
-    background-image: url('../images/projects/constellation.png');
-    width: 40vw;
-    height: 40vw;
+    width: 500px;
+    height: 300px;
     max-width: 40em;
     max-height: 40em;
     background-size: cover;
+    position: relative;
 }
+
+.constellationsBannerInner {
+    position: absolute;
+
+}
+
 .comeFlyWithMeBanner {
     background-image: url('../images/projects/comeflywithme.png');
     width: 90vw;

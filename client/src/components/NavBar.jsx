@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import "../css/AppBar.css";
 
 function NavBar() {
+  const selected = "dashboard";
   return (
     <nav className="appBar">
-      <Link to="/dashboard" className="appBarButton" style={{ color: "black" }}>
+      <Link
+        to="/dashboard"
+        className={`appBarButton ${selected === "dashboard" ? "selected" : ""}`}
+        style={{ color: "black" }}
+      >
         <h2>Home</h2>
       </Link>
       <Link to="/contact" className="appBarButton" style={{ color: "black" }}>

@@ -1,26 +1,39 @@
 .appBar {
-    height: 6em;
+    position: fixed;
+    left: 0;
+    height: 4em;
     display: flex;
     flex-direction: row;
-    background-color: white;
+    background-color:transparent;
     justify-content: flex-end;
     align-items: center;
     border: 0;
-    border-bottom: .5em  solid rgb(22, 22, 24);
-    color: rgb(22, 22, 24);
+    padding: 0;
+    color: rgb(255, 255, 255);
     z-index: 3;
-    max-width: 100%;
+    width: 100dvw;
 }
 .appBarButton {
     text-align: center;
+    align-items: center;
     background-color: transparent;
     text-decoration: none;
-    min-height: 50%;
+    height: 100%;
+    color: #fff;
     min-width:10vw;
     width:50px;
     padding: 0 2rem;
-    border: 0em;
     margin: 0;
+    
+}
+.selected {
+    border-bottom: 4px  solid rgb(255, 255, 255); 
+    height: calc(4em - 2px);
+
+}
+.appBarButton:not(.selected) {
+    border-bottom: 2px  solid rgb(255, 255, 255); 
+
 }
 @media (max-width : 600px){
     .appBar {
